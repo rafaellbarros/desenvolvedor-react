@@ -1,0 +1,11 @@
+# Instalando um server local
+npm i http-server -g
+
+# Executando o server local
+http-server 
+
+# Instalando boilerplate react
+npm i create-react-app -g
+
+# Utilizando boilerplate
+create-react-app 'nome-do-projeto-sem-aspas'
