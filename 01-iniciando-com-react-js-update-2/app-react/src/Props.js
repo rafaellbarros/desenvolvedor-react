@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Panel from './Panel';
 
 export default class Props extends Component {
 
@@ -13,6 +14,8 @@ export default class Props extends Component {
         return (
             <div>
                 { attr === 'p' ? <p>PROPS</p> : <h1>PROPS</h1>}
+                <Panel headercolor="red" bordercolor="blue" headertext="This is a hreader" data="School of Net" />
+                <Panel headercolor="gray" bordercolor="purple" headertext="This is a hreader" data="School of Net" />
             </div>
         );
     }
