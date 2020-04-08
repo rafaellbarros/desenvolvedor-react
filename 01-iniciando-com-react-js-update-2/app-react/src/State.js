@@ -11,6 +11,30 @@ export default class State extends Component {
         console.log(this.state);
     }
 
+    componentDidMount() {
+        // 'após a sua montagem';
+    }
+
+    componentDidUpdate() {
+        // 'após qualquer update qualquer alteração no componente';
+    }
+
+    componentWillMount() {
+        // 'a partir do momento que ele está sendo montando'
+    }
+
+    componentWillUnmount() {
+        // 'a partir do momento que ele está sendo desmontando'
+    }
+
+    componentWillReceiveProps() {
+        // 'a partir do momento que ele recebe uma props, alteração ou uma nova'
+    }
+
+    componentDidCatch() {
+        // 'a partir do momento que ele captura uma exceção'
+    }
+
     render() { 
         const { name, age } = this.state;
         return (
