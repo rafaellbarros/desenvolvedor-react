@@ -4,18 +4,20 @@ import { Field, reduxForm } from 'redux-form';
 // Component
 const InitForm = (props) => {
     return (
-      <div>
         <form action="">
-          <div>
-            <label htmlFor=""></label>
+          <div className="form-group">
+            <label htmlFor="name">Enter your name</label>
             <Field 
               name="name"
               placeholder="Enter your name"
               type="text"
-              component="input"></Field>
+              component="input"
+              className="form-control"></Field>
+          </div>
+          <div className="form-group">
+            <button className="btn btn-primary">Send</button>
           </div>
         </form>
-      </div>
     )
   };
   

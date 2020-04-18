@@ -10,7 +10,11 @@ const store = cfgStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div className="container">
+      <div className="row">
+        <App />
+      </div>
+    </div>
   </Provider>
   ,document.getElementById('root')
 );
