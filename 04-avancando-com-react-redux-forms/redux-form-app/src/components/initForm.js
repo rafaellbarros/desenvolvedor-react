@@ -14,9 +14,20 @@ const renderField = ({
     <label htmlFor="">{label}</label>
     <input {...input} placeholder={label} type={type} className="form-control" />
     { touched && 
-    (error && <span className="text-danger">{error}</span>) }
+    ((error && <span className="text-danger">{error}</span>) || (warning && <span className="text-warning">{warning}</span>)) }
   </div>
 )
+
+const warn = (values) => {
+  const warnings = {};
+  const  { name } = values;
+  
+  if (name && name.toString().length <= 2) {
+    warnings.name = 'To Short';
+  }
+  
+  return warnings;
+}
 
 const validate = (values) => {
   
@@ -25,10 +36,6 @@ const validate = (values) => {
 
   if (!name) {
     errors.name = 'Required';
-  }
-
-  if (name && name.toString().length <= 2) {
-    errors.name = 'To Short';
   }
 
   return errors;
@@ -54,8 +61,8 @@ class InitForm extends Component {
             type="text"
             component={renderField}
             className="form-control"
-            onChange={onChangeName}>
-            </Field>
+            onChange={onChangeName}
+            />
         </div>
         <div className="form-group">
           <button type="button" className="btn btn-primary" onClick={onClick}>Send</button>
@@ -82,6 +89,7 @@ export default connect(
 )(reduxForm({
   form: 'initForm',
   enableReinitialize: true,
-  validate
+  validate,
+  warn
 })(InitForm));
   
