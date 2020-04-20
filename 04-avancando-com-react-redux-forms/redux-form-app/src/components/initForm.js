@@ -2,7 +2,9 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 // Component
-const InitForm = (props) => {
+const InitForm = ({ onClick, onChangeName }) => {
+
+
     return (
         <form action="">
           <div className="form-group">
@@ -12,10 +14,12 @@ const InitForm = (props) => {
               placeholder="Enter your name"
               type="text"
               component="input"
-              className="form-control"></Field>
+              className="form-control"
+              onChange={onChangeName}>
+              </Field>
           </div>
           <div className="form-group">
-            <button className="btn btn-primary">Send</button>
+            <button type="button" className="btn btn-primary" onClick={onClick}>Send</button>
           </div>
         </form>
     )
