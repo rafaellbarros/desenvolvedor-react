@@ -16,6 +16,12 @@ class App extends Component {
     }
   }
 
+  handleInputChange = (e) => {
+    this.setState({
+      text: e.target.value
+    })
+  }
+
   render() {
     
     const { text } = this.state;
@@ -23,7 +29,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <button type="button" onClick={ () => clickHelloAction() }>Click to Dispatch Action</button>
+        <input type="text" onChange={this.handleInputChange} />
+        <button type="button" onClick={ () => clickHelloAction(text) }>Click to Dispatch Action</button>
         <h1>{ msg }</h1>
       </div>
     );
@@ -31,7 +38,6 @@ class App extends Component {
 }
 
 const mapStateToProps = (store) => {
-  console.log('STORE APP ', store);
   return {
     msg: store.clickReducer.msg
   }
