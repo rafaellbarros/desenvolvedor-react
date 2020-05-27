@@ -5,8 +5,12 @@ import App from './App';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import cfgStore from './store';
+import simpleAction from './actions/simple';
 
 const store = cfgStore();
+console.log(store.getState());
+console.log(store.dispatch(simpleAction()));
+console.log(store.getState());
 
 ReactDOM.render(
   <Provider store={store}>

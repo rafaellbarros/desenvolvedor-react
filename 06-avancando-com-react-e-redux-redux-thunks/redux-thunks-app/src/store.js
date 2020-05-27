@@ -1,10 +1,11 @@
 import { applyMiddleware, createStore } from 'redux';
-// import rootReducer from './reducers';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
 
-export default() => {
-    const enchanters = applyMiddleware();
+export default () => {
+    const enchanters = applyMiddleware(thunk);
     return createStore(
-        // rootReduder,
+        rootReducer,
         enchanters
     )
 }
